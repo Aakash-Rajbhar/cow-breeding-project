@@ -38,7 +38,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden mr-2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-green-900"
