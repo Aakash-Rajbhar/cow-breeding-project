@@ -68,7 +68,7 @@ const OurIntroduction = () => {
             </p>
             <motion.a
               href="#learn-more"
-              className="bg-green-700 text-white px-10 py-4 rounded-xl text-xl font-semibold hover:bg-green-800 transition duration-300 shadow-lg"
+              className="bg-green-700 text-white px-10 py-4 rounded-xl text-md md:text-xl font-semibold hover:bg-green-800 transition duration-300 shadow-lg"
               variants={buttonVariants}
               whileHover="hover"
             >

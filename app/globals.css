@@ -9,5 +9,8 @@ html {
 html,
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+body {
   overflow-x: hidden;
 }

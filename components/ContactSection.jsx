@@ -12,6 +12,7 @@ const ContactSection = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-green-900"
           >
@@ -57,8 +58,9 @@ const ContactSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white p-8 rounded-2xl shadow-2xl"
+            className="bg-white p-8 rounded-2xl shadow-lg"
           >
             <form className="space-y-6">
               <div>

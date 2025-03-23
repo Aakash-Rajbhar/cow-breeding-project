@@ -56,7 +56,7 @@ const HeroSection = () => {
         </motion.p>
 
         {/* Animated Buttons */}
-        <motion.div className="space-x-4">
+        <motion.div className="space-x-4 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-2">
           <motion.a
             href="#about"
             className="bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition duration-300"
