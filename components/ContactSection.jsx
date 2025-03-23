@@ -1,49 +1,71 @@
-// Contact.jsx
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className=" py-16 px-4 md:px-8 text-green-800">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section id="contact" className="py-20 px-6 ">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Column - Contact Info */}
-          <div>
-            <p className="text-sm uppercase tracking-wider mb-2">CONTACT NOW</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              GET IN TOUCH NOW
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-green-900"
+          >
+            <p className="text-sm uppercase tracking-widest font-semibold text-green-700 mb-3">
+              Contact Now
+            </p>
+            <h2 className="text-5xl font-extrabold leading-tight mb-6">
+              Get in Touch <span className="text-green-600">Now</span>
             </h2>
-            <p className="text-green-800 mb-10">
-              Lorem ipsum dolor sit amet, adipiscing elit. In hac habitasse
-              platea dictumst. Duis porta quam ut finibus ultrices.
+            <p className="text-lg text-green-700 mb-8">
+              Have any questions or inquiries? Feel free to reach out. We’re
+              here to help!
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
-                <p className="text-sm uppercase tracking-wider mb-3">PHONE</p>
-                <p className="mb-1">+880123456789</p>
-                <p>+880987654321</p>
+                <p className="text-sm font-semibold text-green-700 mb-1">
+                  Phone
+                </p>
+                <p className="text-lg font-medium">+880 1234 56789</p>
+                <p className="text-lg font-medium">+880 9876 54321</p>
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wider mb-3">EMAIL</p>
-                <p>needhelp@company.com</p>
+                <p className="text-sm font-semibold text-green-700 mb-1">
+                  Email
+                </p>
+                <p className="text-lg font-medium">help@company.com</p>
               </div>
 
               <div>
-                <p className="text-sm uppercase tracking-wider mb-3">ADDRESS</p>
-                <p>Road No. 8, Gahna, Uttar Pradesh</p>
+                <p className="text-sm font-semibold text-green-700 mb-1">
+                  Address
+                </p>
+                <p className="text-lg font-medium">
+                  Road No. 8, Gahna, Uttar Pradesh
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Contact Form */}
-          <div>
-            <form className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white p-8 rounded-2xl shadow-2xl"
+          >
+            <form className="space-y-6">
               <div>
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full bg-gray-100 p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-neutral-700 border-[1px] border-neutral-300 placeholder-gray-400"
+                  className="w-full bg-gray-100 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800 shadow-sm border border-gray-300"
                 />
               </div>
 
@@ -51,7 +73,7 @@ const ContactSection = () => {
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full bg-gray-100 p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-neutral-700 border-[1px] border-neutral-300 placeholder-gray-400"
+                  className="w-full bg-gray-100 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800 shadow-sm border border-gray-300"
                 />
               </div>
 
@@ -59,27 +81,29 @@ const ContactSection = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full bg-gray-100 p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-neutral-700 border-[1px] border-neutral-300 placeholder-gray-400"
+                  className="w-full bg-gray-100 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800 shadow-sm border border-gray-300"
                 />
               </div>
 
               <div>
                 <textarea
                   placeholder="Your Message"
-                  className="w-full bg-gray-100 p-4 rounded-md h-32 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-neutral-700 border-[1px] border-neutral-300 placeholder-gray-400"
+                  className="w-full bg-gray-100 p-4 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-800 shadow-sm border border-gray-300"
                 ></textarea>
               </div>
 
               <div>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="bg-yellow-400 hover:bg-yellow-500 transition-colors duration-300 text-black font-medium py-3 px-8 rounded-md"
+                  className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg"
                 >
-                  SEND MESSAGE
-                </button>
+                  Send Message
+                </motion.button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

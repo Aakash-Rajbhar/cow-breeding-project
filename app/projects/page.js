@@ -1,8 +1,9 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import { motion } from 'framer-motion';
 
 const ProjectsPage = () => {
-  // Example project data (10-12 projects)
   const projects = [
     {
       id: 1,
@@ -103,29 +104,43 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <section className="py-16 bg-green-50">
+    <section className="py-16 mt-6 bg-green-50">
       <div className="container max-w-7xl mx-auto px-4">
         {/* Page Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-green-900 text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-bold text-green-900 text-center mb-12"
+        >
           Our Projects
-        </h2>
+        </motion.h2>
 
         {/* Grid for Projects */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden rounded-t-lg">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={800}
-                  className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300"
-                />
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={800}
+                    className="w-full h-48 object-cover"
+                  />
+                </motion.div>
               </div>
 
               {/* Project Content */}
@@ -134,14 +149,16 @@ const ProjectsPage = () => {
                   {project.title}
                 </h3>
                 <p className="text-green-800 mb-6">{project.description}</p>
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href={project.link}
-                  className="bg-green-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-800 transition duration-300"
+                  className="bg-green-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-800 transition duration-300 block text-center"
                 >
                   Contribute Now
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

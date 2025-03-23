@@ -2,6 +2,7 @@ import ContactSection from './ContactSection';
 import HeroSection from './HeroSection';
 import ModernBreeding from './ModernBreeding';
 import OurIntroduction from './OurIntroduction';
+import ProductsSection from './ProductsSection';
 import ProjectsSection from './ProjectsSection';
 import TestimonialSection from './TestimonialSection';
 
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <OurIntroduction />
       <ModernBreeding />
+      <ProductsSection />
       <ProjectsSection />
       <TestimonialSection />
       <ContactSection />
