@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold text-green-900">
+          <div className="text-3xl font-bold text-green-900">
             <Link href="/">Cow Breeds</Link>
           </div>
 

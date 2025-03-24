@@ -104,20 +104,20 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <section className="py-16 mt-6 bg-green-50">
+    <section className="py-16  bg-green-50">
       <div className="container max-w-7xl mx-auto px-4">
         {/* Page Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-green-900 text-center mb-12"
+          className="text-4xl md:text-5xl font-bold text-green-900 text-center pt-12 mb-12"
         >
           Our Projects
         </motion.h2>
 
         {/* Grid for Projects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
