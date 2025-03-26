@@ -1,7 +1,7 @@
 'use client';
-
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { toast,ToastContainer } from 'react-toastify';
 
 const ProjectsPage = () => {
   const projects = [
@@ -102,6 +102,32 @@ const ProjectsPage = () => {
       link: '#donate',
     },
   ];
+  const handleInvest = async () => {
+    try {
+      if (typeof window.ethereum !== "undefined") {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        const userAccount = accounts[0];
+        const transactionParameters = {
+          to: "0x4b567f404c7fd52f948e2bc8758945b3339d5092",
+          from: userAccount,
+          value: "0x2386F26FC10000",
+        };
+        const trans = await window.ethereum.request({
+          method: "eth_sendTransaction",
+          params: [transactionParameters],
+        });
+        console.log(trans)
+        toast.success("Transaction sent successfully!");
+        const newCoins = coins + 4;
+        setCoins(newCoins);
+        localStorage.setItem("coins", newCoins);
+      } else {
+        toast.error("MetaMask is not installed. Please install MetaMask to proceed.");
+      }
+    } catch (error) {
+      console.error("Error during transaction:", error);
+    }
+  };
 
   return (
     <section className="py-16  bg-green-50">
@@ -149,7 +175,7 @@ const ProjectsPage = () => {
                   {project.title}
                 </h3>
                 <p className="text-green-800 mb-6">{project.description}</p>
-                <motion.a
+                <motion.a onClick={handleInvest}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={project.link}
@@ -162,6 +188,7 @@ const ProjectsPage = () => {
           ))}
         </div>
       </div>
+      <ToastContainer/>
     </section>
   );
 };
